@@ -7,3 +7,9 @@
 6. cursor: zoom-out 缩小符号
 7. cursor : auto 浏览器根据内容决定指针样式，如文字用text样式
 8. cursor : default 默认指针，通常是箭头
+### 媒体查询代码示例
+```
+@media (min-width:1000px){
+  .box{width:600px}
+}
+```
