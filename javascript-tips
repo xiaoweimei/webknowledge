@@ -1,2 +1,2 @@
 ## window对象的一些知识
-1. window.outerHeight 返回浏览器窗口的高度 window.outerWidth返回浏览器窗口的宽度
+1. window.outerHeight 返回浏览器窗口的外部高度 window.outerWidth返回浏览器窗口的外部宽度
