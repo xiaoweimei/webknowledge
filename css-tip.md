@@ -16,8 +16,8 @@
 ### 清除浮动
 ```
 .clearfix{
-  content:'',
-  display:block,
+  content:'';
+  display:block;
   clear:both;
 }
 ```
