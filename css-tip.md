@@ -13,3 +13,11 @@
   .box{width:600px}
 }
 ```
+### 清除浮动
+```
+.clearfix{
+  content:'',
+  display:block,
+  clear:both;
+}
+```
