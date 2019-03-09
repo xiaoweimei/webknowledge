@@ -1,0 +1,16 @@
+### 冒泡排序
+```
+function bubble(Array){
+	for(var i=0;i<Array.length-1;i++){
+		for(var j=Array.length-1-1;j>=i;j--){
+			if(Array[j]>Array[j+1]){
+				var t
+				t=Array[j]
+				Array[j]=Array[j+1]
+				Array[j+1]=t
+			}
+		}
+	}
+	return Array
+}
+```
