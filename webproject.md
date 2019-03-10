@@ -3,8 +3,8 @@
 ### npm安装的一些技巧
 ```
 npm install -g nrm //全局安装
-npm install --save nrm //本地安装是你发布之后还依赖的东西。
-npm install --save-dev nrm //本地安装是你开发时候依赖的东西
+npm install --save nrm //本地安装是你发布之后还依赖的东西，安装完成后版本号和包名称会出现在package.json的dependencies下
+npm install --save-dev nrm //本地安装是你开发时候依赖的东西，安装完成后版本号和包名称会出现在package.json的dependencies下
 nrm ls //查看源
 nrm use taobao //切换源
 ```
