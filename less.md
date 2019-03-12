@@ -111,3 +111,48 @@ h2 {
 }
 
 ```
+- 一般情况下不推荐在客户端使用less，而如果非要使用，需要
+```
+//引入less样式文件
+<link rel="stylesheet/less" type="text/css" href="styles.less">
+//引入less.js文件
+<script src="less.js" type="text/javascript"></script>
+```
+- 在服务器端使用
+```
+//通过npm安装
+$ npm install less
+//下载最新稳定的版本
+$ npm install less@latest
+//使用
+var less = require('less');
+
+less.render('.class { width: 1 + 1 }', function (e, css) {
+    console.log(css);
+});
+//上面会输出
+.class {
+  width: 2;
+}
+//你也可以手动调用解析器和编译器:
+var parser = new(less.Parser);
+
+parser.parse('.class { width: 1 + 1 }', function (err, tree) {
+    if (err) { return console.error(err) }
+    console.log(tree.toCSS());
+});
+//配置你可以向解析器传递参数:
+var parser = new(less.Parser)({
+    paths: ['.', './lib'], // Specify search paths for @import directives
+    filename: 'style.less' // Specify a filename, for better error messages
+});
+
+parser.parse('.class { width: 1 + 1 }', function (e, tree) {
+    tree.toCSS({ compress: true }); // Minify CSS output
+});
+//在命令行下使用你可以在终端调用 LESS 解析器:
+$ lessc styles.less
+//上面的命令会将编译后的 CSS 传递给 stdout, 你可以将它保存到一个文件中:
+$ lessc styles.less > styles.css
+//如何你想将编译后的 CSS 压缩掉，那么加一个 -x 参数就可以了.
+```
