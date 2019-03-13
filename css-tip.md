@@ -35,3 +35,9 @@ box-sizing:border-box; width == border 宽度 + 内容区宽度 + padding 宽度
 1. 选择器越具体，优先级越高。 #xxx 大于 .yyy
 2. 同样优先级，写在后面的覆盖前面的。
 3. color: red !important; 优先级最高。
+
+### BFC是什么?
+```
+overflow:hidden 清除浮动。（可以用.clearfix 清除浮动，坚决不用 overflow:hidden 清除浮动）
+overflow:hidden 取消父子 margin 合并
+```
