@@ -15,6 +15,8 @@
 ```
 ### 清除浮动
 ```
+overflow: hidden;//BFC形式清除浮动
+
 .clearfix{
   content:'';
   display:block;
@@ -29,3 +31,7 @@ box-sizing:border-box; width == border 宽度 + 内容区宽度 + padding 宽度
 ### css reset 和 normalize.css 有什么区别？
 - reset 重置，之前的样式我不要，a{color: red;}，抛弃默认样式
 - normalize 让所有浏览器的标签都跟标准规定的默认样式一致，各浏览器上的标签默认样式基本统一。
+### 选择器优先级如何确定？
+1. 选择器越具体，优先级越高。 #xxx 大于 .yyy
+2. 同样优先级，写在后面的覆盖前面的。
+3. color: red !important; 优先级最高。
