@@ -41,3 +41,7 @@ box-sizing:border-box; width == border 宽度 + 内容区宽度 + padding 宽度
 overflow:hidden 清除浮动。（可以用.clearfix 清除浮动，坚决不用 overflow:hidden 清除浮动）
 overflow:hidden 取消父子 margin 合并
 ```
+### 水平居中
+- 内联：爸爸身上写 text-align:center;
+- 块级：margin-left: auto; margin-right: auto;
+### 垂直居中
