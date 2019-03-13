@@ -36,26 +36,14 @@
 - 比如：浏览器第一次请求a.jpg 时，服务器会发送完整的文件并附带额外信息，其中Etag 是 对a.jpg文件的编码，如果a.jpg在服务端未被修改，这个值就不会变；
 `Cache-Control: max-age=300；`
 `ETag:W/"e-cbxLFQW5zapn79tQwb/g6Q"`
-**总结：浏览器缓存控制分为强缓存和协商缓存，协商缓存必须配合强缓存使用。
-
-首先浏览器第一次跟服务器请求一个资源，服务器在返回这个资源和response header的同时，会根据开发者要求或者浏览器默认，在response的header加上相关字段的http response header。
-
-一、当浏览器对某个资源的请求命中了强缓存时，利用[Expires]或者[Cache-Control]这两个http response header实现
-。
-
-1. [Expires]：描述的是一个绝对时间，根据的是客户端时间。用GMT格式的字符串表示，如：Expires:Thu, 31 Dec 2037 23:55:55 GMT 下次浏览器再次请求同一资源时。先从客户端缓存中寻找，找到这个资源后，拿出它的[Expires]跟当前的请求时间比较。如果请求时间在[Expires]指定的失效时间之前，就能命中缓存，这样就不用再次到服务器上去缓存一遍，节省了资源。但是正因为是绝对时间，如果客户端时间被随意更改下，这个机制就失效了。所以我们需要[Cache-Control]。
-
-2. [Cache-Control]：描述的是一个相对时间，在进行缓存命中时，都是利用浏览器时间判断。
-
-这两个header可以只启用一个，也可以同时启用，当response header中，[Expires]和[Cache-Control]同时存在时，[Cache-Control]优先级高于[Expires]。
-
-二、当浏览器对某个资源的请求没有命中强缓存，就会发一个请求到服务器，验证协商缓存是否命中。
-如果命中，则还是从客户端缓存中加载。协商缓存利用的是[Last-Modified，If-Modified-Since]和[ETag、If-None-Match]这两对Header来管理的。
-
-1. [Last-Modified]：原理和上面的[expires]相同，区别是它是根据服务器时间返回的header来判断缓存是否存在。但是有时候也会服务器上资源其实有变化，但是最后修改时间却没有变化的情况（这种问题也不容易被定位），这时候我们需要[ETag、If-None-Match]。
-
-2. [ETag、If-None-Match]：原理与上相同，区别是浏览器跟服务器请求一个资源，服务器在返回这个资源的同时，在respone的header加上ETag的header，这个header是服务器根据当前请求的资源生成的一个唯一标识，这个唯一标识是一个字符串，只要资源有变化这个串就不同。
-
-3. [ETag、If-None-Match]这么厉害我们为什么还需要[Last-Modified、If-Modified-Since]呢？有一个例子就是分布式系统尽量关闭掉ETag(每台机器生成的ETag都会不一样）
-
-[Last-Modified，If-Modified-Since]和[ETag、If-None-Match]一般都是同时启用。**
+6. 总结：浏览器缓存控制分为强缓存和协商缓存，协商缓存必须配合强缓存使用。
+- 首先浏览器第一次跟服务器请求一个资源，服务器在返回这个资源和response header的同时，会根据开发者要求或者浏览器默认，在response的header加上相关字段的http response header。
+- 一、当浏览器对某个资源的请求命中了强缓存时，利用[Expires]或者[Cache-Control]这两个http response header实现。
+- 1. [Expires]：描述的是一个绝对时间，根据的是客户端时间。用GMT格式的字符串表示，如：Expires:Thu, 31 Dec 2037 23:55:55 GMT 下次浏览器再次请求同一资源时。先从客户端缓存中寻找，找到这个资源后，拿出它的[Expires]跟当前的请求时间比较。如果请求时间在[Expires]指定的失效时间之前，就能命中缓存，这样就不用再次到服务器上去缓存一遍，节省了资源。但是正因为是绝对时间，如果客户端时间被随意更改下，这个机制就失效了。所以我们需要[Cache-Control]。
+- 2. [Cache-Control]：描述的是一个相对时间，在进行缓存命中时，都是利用浏览器时间判断。
+- 这两个header可以只启用一个，也可以同时启用，当response header中，[Expires]和[Cache-Control]同时存在时，[Cache-Control]优先级高于[Expires]。
+- 二、当浏览器对某个资源的请求没有命中强缓存，就会发一个请求到服务器，验证协商缓存是否命中。如果命中，则还是从客户端缓存中加载。协商缓存利用的是[Last-Modified，If-Modified-Since]和[ETag、If-None-Match]这两对Header来管理的。
+- 1. [Last-Modified]：原理和上面的[expires]相同，区别是它是根据服务器时间返回的header来判断缓存是否存在。但是有时候也会服务器上资源其实有变化，但是最后修改时间却没有变化的情况（这种问题也不容易被定位），这时候我们需要[ETag、If-None-Match]。
+- 2. [ETag、If-None-Match]：原理与上相同，区别是浏览器跟服务器请求一个资源，服务器在返回这个资源的同时，在respone的header加上ETag的header，这个header是服务器根据当前请求的资源生成的一个唯一标识，这个唯一标识是一个字符串，只要资源有变化这个串就不同。
+- 3. [ETag、If-None-Match]这么厉害我们为什么还需要[Last-Modified、If-Modified-Since]呢？有一个例子就是分布式系统尽量关闭掉ETag(每台机器生成的ETag都会不一样）
+- [Last-Modified，If-Modified-Since]和[ETag、If-None-Match]一般都是同时启用。
