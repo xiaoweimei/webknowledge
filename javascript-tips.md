@@ -15,3 +15,32 @@
  }
  xhr.send('a=1&b=2')
 ```
+### 函数节流
+```
+function fn(){}
+var cd=false
+button.onclick=function(){
+  if(cd){
+  //
+  }else{
+    fn();
+    cd=true;
+    var timeId=setTimeout(()=>{
+      cd=false
+      },3000)
+  }
+}
+```
+### 函数防抖
+```
+var timeId=null
+button.onclick=function(){
+  if(timeId){
+    window.clearTimeout(timeId)
+  }
+  timeId=setTimeout(()=>{
+    fn()
+    timeId=null
+  },5000)
+}  
+```
