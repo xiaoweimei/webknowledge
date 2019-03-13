@@ -21,3 +21,11 @@
   clear:both;
 }
 ```
+### 说说盒模型
+```
+box-sizing:content-box;// width == 内容区宽度
+box-sizing:border-box; width == border 宽度 + 内容区宽度 + padding 宽度
+```
+### css reset 和 normalize.css 有什么区别？
+- reset 重置，之前的样式我不要，a{color: red;}，抛弃默认样式
+- normalize 让所有浏览器的标签都跟标准规定的默认样式一致，各浏览器上的标签默认样式基本统一。
