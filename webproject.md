@@ -30,6 +30,6 @@ npm install --save-dev nrm //本地安装是你开发时候依赖的东西，安
 nrm ls //查看源
 nrm use taobao //切换源
 ```
-### common.js和AMD
+### CommonJs和AMD
 - common.js同步规范
 - AMD异步的require
