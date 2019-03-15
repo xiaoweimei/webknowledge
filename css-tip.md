@@ -46,3 +46,5 @@ overflow:hidden 取消父子 margin 合并
 - 块级：margin-left: auto; margin-right: auto;
 ### 垂直居中
 方法比较多,flex最方便，具体参见之前写的代码
+### css加在元素上的超链接
+- css中关于超链接的五个属性一般正常顺序为：link，visited，focus，hover，active
