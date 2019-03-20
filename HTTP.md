@@ -73,10 +73,10 @@
 3. client----->server:ACK(应答报文，表示收到已连接)
 ### TCP四次挥手
 > 四次挥手：
->>    由客户端发起的关闭连接
->>        * client----->server:FIN(请求关闭连接)
-        * server----->client:ACK(收到了连接，但不会立即关闭，等到报文都发送完再回复一个FIN)
-        * server----->client:FIN
-        * client----->server:ACK(收到关闭)
-    由服务端发起的关闭连接
-        * 当http设置了keepalive定时关闭，服务端会在结束数据传送后关闭TCP连接
+   - 由客户端发起的关闭连接
+        1. client----->server:FIN(请求关闭连接)
+        2. server----->client:ACK(收到了连接，但不会立即关闭，等到报文都发送完再回复一个FIN)
+        3. server----->client:FIN
+        4. client----->server:ACK(收到关闭)
+    - 由服务端发起的关闭连接
+        1. 当http设置了keepalive定时关闭，服务端会在结束数据传送后关闭TCP连接
