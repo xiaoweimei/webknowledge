@@ -42,8 +42,8 @@ overflow:hidden 清除浮动。（可以用.clearfix 清除浮动，坚决不用
 overflow:hidden 取消父子 margin 合并
 ```
 ### 水平居中
-- 内联：爸爸身上写 text-align:center;
-- 块级：margin-left: auto; margin-right: auto;
+- 内联：爸爸身上写 `text-align:center;`
+- 块级：`margin-left: auto; margin-right: auto;`
 ### 垂直居中
 方法比较多,flex最方便，具体参见之前写的代码
 ### css加在元素上的超链接
