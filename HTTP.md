@@ -72,7 +72,7 @@
 2. server----->client:SYN+ACK(应答报文，表示已创建连接)
 3. client----->server:ACK(应答报文，表示收到已连接)
 ### TCP四次挥手
-> 四次挥手：
+-  四次挥手：
    - 由客户端发起的关闭连接
         1. client----->server:FIN(请求关闭连接)
         2. server----->client:ACK(收到了连接，但不会立即关闭，等到报文都发送完再回复一个FIN)
