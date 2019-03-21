@@ -52,3 +52,5 @@ overflow:hidden 取消父子 margin 合并
 - 由于不同厂商的浏览器，比如Internet Explorer, Safari, Mozilla Firefox,Chrome等，或者是同一厂商的浏览器的不同版本，如IE6和IE7，对CSS的解析认识不完全一样，因此会导致生成的页面效果不一样，得不到我们所需要的页面效果。这个时候我们就需要针对不同的浏览器写不同的CSS，让它能在不同的浏览中也能得到我们想要的页面效果。
 ### css hack常用方式
 - 条件注释法、IE hack法、选择器前缀法
+### 大型命名法
+- BEM命名法
