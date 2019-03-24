@@ -68,3 +68,8 @@ div {
 ### transform用法
 - CSS transforms 通过一系列 CSS 属性实现，通过使用这些属性，可以对 HTML 元素进行线性仿射变形（affine linear transformations）。可以进行的变形包括旋转，倾斜，缩放以及位移，这些变形同时适用于平面与三维空间。
 > 只有使用盒模型（Box Model）来定位的元素可以被变换（transformed）。根据一般经验（原文：As a rule of thumb），拥有 display: block 的元素是由盒模型定位的。
+### SASS
+1. 嵌套选择器
+2. 变量
+3. mixin
+4. placeholder
