@@ -58,7 +58,7 @@ overflow:hidden 取消父子 margin 合并
 ### transition用法
 - 基本用法：Transitions可以为一个元素在不同状态之间切换的时候定义不同的过渡效果。比如在不同的伪元素之间切换，像是 :hover，:active 或者通过JavaScript实现的状态变化。
 ```
-//简写语法
+//简写语法，属性、时间、速度、延迟
 div {
     transition: <property> <duration> <timing-function> <delay>;
 }
