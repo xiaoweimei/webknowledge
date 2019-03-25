@@ -65,14 +65,25 @@ div {
 }
 ```
 ### animation用法
+- CSS animation属性是如下属性的一个简写属性形式: animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction 和 animation-fill-mode.
 ```
 //举个小例子
+//属性初始值as each of the properties of the shorthand:
+//animation-name: none
+//animation-duration: 0s
+//animation-timing-function: ease
+//animation-delay: 0s
+//animation-iteration-count: 1
+//animation-direction: normal
+//animation-fill-mode: none
+//animation-play-state: running
 .name{
   text-align: center;
   margin: 0 auto; 
   display: inline-block;
   animation: .5s zhuandong infinite linear;
 }
+//animation顺序按照名字、持续时间、速度类型、
 @keyframes zhuandong {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg);}
