@@ -83,7 +83,7 @@ div {
   display: inline-block;
   animation: .5s zhuandong infinite linear;
 }
-//animation顺序按照名字、持续时间、速度类型、延迟、运行次数、运行方向
+//animation顺序按照名字、持续时间、速度类型、延迟、运行次数、运行方向、目标样式、是否暂停动画
 @keyframes zhuandong {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg);}
