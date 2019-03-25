@@ -83,10 +83,28 @@ div {
   display: inline-block;
   animation: .5s zhuandong infinite linear;
 }
-//animation顺序按照名字、持续时间、速度类型、
+//animation顺序按照名字、持续时间、速度类型、延迟、运行次数、运行方向
 @keyframes zhuandong {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg);}
+}
+
+//再来一个小例子
+p {
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 ```
 ### transform用法
