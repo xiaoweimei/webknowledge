@@ -66,6 +66,7 @@ div {
 ```
 ### animation用法
 ```
+//举个小例子
 .name{
   text-align: center;
   margin: 0 auto; 
