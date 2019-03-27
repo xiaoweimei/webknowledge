@@ -7,4 +7,4 @@
 ### 在gitbash中输入vimtutor弹出vim的官方教程
 - h左，l右，j下k上 hjkl方向键
 1. 第一个点：退出
-- 先按Esc，再输入:q!不保存退出
+- 先按Esc，再输入:q!强制退出不保存 q退出quit的缩写，!强制
