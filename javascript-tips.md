@@ -1,3 +1,13 @@
+### js基本物料
+- 基础类型、表达式、语句、流程控制、函数、数组、引用类型、正则等等
+### 控制页面
+- DOM操作
+- 常见事件 鼠标点击、鼠标放上去
+- 先选取用querySelector，querySelectorAll，再绑定
+### 养成编程思路，分析问题处理问题
+### 运用自如、优化、复用、组件、模块
+### 数组常用方法 forEach方法，sort方法 还有各种方法
+- 懒加载、轮播、数据流
 ### window对象的一些知识
 1. window.outerHeight 返回浏览器窗口的外部高度 window.outerWidth返回浏览器窗口的外部宽度
 2. window.innerHeight 返回浏览器窗口的内容区域的高度包含垂直滚动条(如果有的话) window.innerWidth返回浏览器窗口的内容区域宽度，包含水平滚动条(如果有的话)
