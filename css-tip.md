@@ -45,12 +45,12 @@ overflow:hidden 取消父子 margin 合并
 - 内联：爸爸身上写 `text-align:center;`
 - 块级：`margin-left: auto; margin-right: auto;`
 ### 垂直居中
-- 父元素高度不固定，由内部子元素撑开，设置上下padding相等，使子元素在父元素内垂直居中
-- 绝对定位实现居中，子元素宽高确定情况下设置绝对定位，使用负margin实现垂直居中
+- 父元素高度不固定，由内部子元素撑开，设置上下padding相等，使子元素在父元素内垂直居中，具体实现比较简单，不多说了
+- 绝对定位实现居中，子元素宽高确定情况下设置绝对定位，使用负margin实现垂直居中，
 - 绝对定位配合`transform:translate(-50%,-50%)`实现垂直居中，子元素的宽高不确定也可以实现
-- `vertical-align:middle`实现垂直居中，关键点，伪元素基线对齐
-- `vertical-align:middle`配合table-cell实现垂直居中
-- `display:flex`实现水平居中
+- `vertical-align:middle`实现垂直居中，关键点，伪元素基线对齐，具体实现，在父元素下创建一个伪元素，设置`content:'';display:inline-block;height:100%;vertical-align:middle`,居中的子元素上设置`vertical-align:middle;display:inline-block`即可
+- `vertical-align:middle`配合table-cell实现垂直居中,具体实现父元素上设置`display:table-cell;vertical-align:middle`,子元素上不用考虑
+- `display:flex`实现水平居中，具体实现父元素上可以设置`justify-content: center;align-items: center;display:flex`
 方法比较多,flex最方便，具体参见之前写的代码
 ### css加在元素上的超链接
 - css中关于超链接的五个属性一般正常顺序为：link，visited，focus，hover，active
