@@ -75,6 +75,7 @@ div {
 ```
 ### animation用法
 - CSS animation属性是如下属性的一个简写属性形式: animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction 和 animation-fill-mode.
+- 设置过程中，名称和时间必须设置，要不然看不到效果
 ```
 //举个小例子
 //属性初始值as each of the properties of the shorthand:
