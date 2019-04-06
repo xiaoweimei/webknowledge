@@ -125,3 +125,8 @@ p {
 2. 变量
 3. mixin
 4. placeholder
+### CSS的filter属性
+- filter CSS属性将模糊或颜色偏移等图形效果应用于元素。滤镜通常用于调整图像，背景和边框的渲染。
+- 包括以下一些属性值。blur()设置高斯模糊、brightness()设置亮度、contrast()设置对比度、drop-shadow()设置阴影、grayscale()设置灰度、hue-rotate()设置色相旋转、invert()设置图像翻转、opacity()设置透明度、saturate()设置饱和度、sepia()将图像转化为深褐色
+- 可以设置符合属性值
+- 兼容性：只能兼容到Edge
