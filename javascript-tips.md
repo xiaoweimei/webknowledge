@@ -11,9 +11,15 @@
 ### 数组常用方法 forEach方法，sort方法 还有各种方法
 - 懒加载、轮播、数据流
 ### window对象的一些知识
-1. window.outerHeight 返回浏览器窗口的外部高度 window.outerWidth返回浏览器窗口的外部宽度
-2. window.innerHeight 返回浏览器窗口的内容区域的高度包含垂直滚动条(如果有的话) window.innerWidth返回浏览器窗口的内容区域宽度，包含水平滚动条(如果有的话)
+1. `window.outerHeight` 返回浏览器窗口的外部高度 `window.outerWidth`返回浏览器窗口的外部宽度
+2. `window.innerHeight` 返回浏览器窗口的内容区域的高度包含垂直滚动条(如果有的话) `window.innerWidth`返回浏览器窗口的内容区域宽度，包含水平滚动条(如果有的话)
 - 举个例子：打开控制台后，向上拖动控制台上面边线，使右侧垂直方向出现滚动条，这个时候，innerHeight的值就会随着你的拖动变得越来越小，而不拖动浏览器外部放大缩小窗口的话，outerHeight是不会改变的。
+3. `window.screenX`和`window.screenY`属性，返回浏览器窗口左上角相对于当前屏幕左上角的水平距离和垂直距离（单位像素）。这两个属性只读。
+4. `window.scrollX`属性返回页面的水平滚动距离，`window.scrollY`属性返回页面的垂直滚动距离，单位都为像素。这两个属性只读。
+5. `window.pageXOffset`属性和`window.pageYOffset`属性，是`window.scrollX`和`window.scrollY`别名。
+6. `window.screen`Screen 对象表示当前窗口所在的屏幕，提供显示设备的信息。`window.screen`属性指向这个对象。包括屏幕高度、宽度、可用高度、可用宽度、色彩位深等
+7. `window.navigator`属性指向一个包含浏览器信息的 Navigator 对象。脚本通过这个属性了解用户使用的是哪一种浏览器。
+8. `window.alert()`、`window.prompt()`、`window.confirm()`都是浏览器与用户互动的全局方法。
 ### JavaScript其中数据类型
 - Number\String\Undifined\Null\Bool\Symbol\Object
 ### 手写一个AJAX
@@ -71,6 +77,14 @@ button.onclick=function(){
 - 如果找不到，再从创建当前函数所在的作用域去找, 以此往上
 - 注意找的是变量的当前的状态
 ### 字符串操作
+- length返回长度，charAt返回指定位置的字符,charCodeAt返回指定位置的unicode码点，concat方法用于连接两个字符串。
+- slice方法用于从原字符串取出子字符串并返回，
+- indexOf方法用于确定一个字符串在另一个字符串中第一次出现的位置，返回结果是匹配开始的位置。如果返回-1，就表示不匹配。
+- trim方法用于去除字符串两端的空格，返回一个新字符串，不改变原字符串。toLowerCase方法用于将一个字符串全部转为小写，toUpperCase则是全部转为大写。
+- match方法用于确定原字符串是否匹配某个子字符串，返回一个数组，成员为匹配的第一个字符串。
+- search方法的用法基本等同于match，但是返回值为匹配的第一个位置。replace方法用于替换匹配的子字符串。
+- split方法按照给定规则分割字符串，返回一个由分割出来的子字符串组成的数组。
+- localeCompare方法用于比较两个字符串。它返回一个整数，如果小于0，表示第一个字符串小于第二个字符串；如果等于0，表示两者相等；如果大于0，表示第一个字符串大于第二个字符串。
 ### 数组操作
 ### 基本类型和引用类型
 1. 基本类型(数值、布尔值、字符串、null和undefined)
