@@ -172,3 +172,63 @@ Math.atan(1) // 0.7853981633974483
 e.preventDefault() //取消默认行为
 e.stopPropagation() //阻止事件冒泡
 ```
+### apply、call、bind有什么作用，什么区别？
+1. 三者的相似之处
+- 都是用来改变函数的this对象的指向的。
+- 第一个参数都是this要指向的对象。
+- 都可以利用后续参数传参。
+- 不同的是，bind返回的是一个函数，而apply和call相当于对函数的直接调用
+-  Function.prototype.bind:
+- 作用：bind，返回一个新函数，并且使函数内部的this为传入的第一个参数
+```
+var fn3 = obj1.fn.bind(obj1);
+fn3();
+```
+- 使用call和apply设置this
+- call apply，调用一个函数，传入函数执行上下文及参数
+```
+fn.call(context, param1, param2...)
+fn.apply(context, paramArray)
+// 语法很简单，第一个参数都是希望设置的this对象，不同之处在于call方法接收参数列表，而apply接收参数数组
+fn2.call(obj1);
+fn2.apply(obj1);
+```
+如：
+```
+var xj={
+  name: "小姬",
+  gender: "男",
+  age: 24,
+  say: function(){
+      alert(this.name+" , "+this.gender+" ,今年"+this.age);
+  }
+}
+var xg={
+  name: "小古",
+  gender: "女",
+  age: 18
+}
+xj.say();
+```
+- 显示的肯定是小姬 ， 男 ， 今年24。如何用xj的say方法来显示xg的数据呢。对于call可以这样：
+- xj.say.call(xg),对于apply可以这样xj.say.apply(xg),对于bind可以这样xj.say.bind(xg)()
+- 即call和apply都是对函数的直接调用，而bind方法返回的仍然是一个函数，因此后面还需要()来进行调用才可以。
+- 那么对于apply和call的区别呢
+- 改写上述例子
+```
+var xj={
+  name: "小姬·",
+  gender: "男",
+  age: 24,
+  say: function(school,grade){
+      alert(this.name+" , "+this.gender+" ,今年"+this.age+',在'+school+"上"+grade);
+  }
+}
+var xg={
+  name: "小古",
+  gender: "女",
+  age: 18
+}
+xj.say('德育中学','三年级');
+```
+- 显示的是"小姬 , 男 ,今年24,在育才中学上三年级",对于call可以这样:xj.say.call(xg,'德育中学','四年级'),对于apply可以这样xj.say.apply(xg,['德育中学','四年级']),对于bind可以这样xj.say.bind(xg,'德育中学','四年级')()，也可以在调用过程中将参数传递过去，即xj.say.bind(xg)('德育中学','四年级')
