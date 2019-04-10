@@ -232,3 +232,25 @@ var xg={
 xj.say('德育中学','三年级');
 ```
 - 显示的是"小姬 , 男 ,今年24,在育才中学上三年级",对于call可以这样:xj.say.call(xg,'德育中学','四年级'),对于apply可以这样xj.say.apply(xg,['德育中学','四年级']),对于bind可以这样xj.say.bind(xg,'德育中学','四年级')()，也可以在调用过程中将参数传递过去，即xj.say.bind(xg)('德育中学','四年级')
+### 关于原型、原型链
+1. 如下代码中， new 一个函数本质上做了什么？
+```
+function Modal(msg){
+    this.msg = msg
+}
+var modal = new Modal()
+```
+- 创建一个新的对象，这个对象的类型是object；
+- 查找Modal的prototype上的所有方法、属性，复制一份给创建的Object
+- 将构造函数Modal内部的this指向创建的Object
+- 创建的Object的proto指向Modal的prototype
+- 执行构造函数Modal
+- 返回新创建的对象给变量modal
+2. 有如下代码，代码中并未添加 toString方法，这个方法是哪里来的？画出原型链图进行解释
+```
+function People(){
+}
+var p = new People()
+p.toString()
+```
+![原型链图](https://video.jirengu.com/xdml/image/18f13e4b-513d-44f4-9d10-c124dd7f9d4c/2019-2-21-12-59-18.jpg)
