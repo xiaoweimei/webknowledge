@@ -167,3 +167,8 @@ Math.acos(1) // 0
 Math.atan(1) // 0.7853981633974483
 
 ```
+### 取消默认与阻止冒泡
+```
+e.preventDefault() //取消默认行为
+e.stopPropagation() //阻止事件冒泡
+```
