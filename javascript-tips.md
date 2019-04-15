@@ -144,6 +144,68 @@ numbers
 ////上面代码中，map方法的回调函数有三个参数，elem为当前成员的值，index为当前成员的位置，arr为原数组（[1, 2, 3]）。
 ```
 - forEach方法与map方法很相似，也是对数组的所有成员依次执行参数函数。但是，forEach方法不返回值，只用来操作数据。这就是说，如果数组遍历的目的是为了得到返回值，那么使用map方法，否则使用forEach方法。forEach的用法与map方法一致，参数是一个函数，该函数同样接受三个参数：当前值、当前位置、整个数组。
+```
+function log(element, index, array) {
+  console.log('[' + index + '] = ' + element);
+}
+
+[2, 5, 9].forEach(log);
+// [0] = 2
+// [1] = 5
+// [2] = 9
+```
+- some方法是只要一个成员的返回值是true，则整个some方法的返回值就是true，否则返回false。
+```
+var arr = [1, 2, 3, 4, 5];
+arr.some(function (elem, index, arr) {
+  return elem >= 3;
+});
+// true
+//--------------------------分割线---------------//
+var arr = [1, 2, 3, 4, 5];
+arr.every(function (elem, index, arr) {
+  return elem >= 3;
+});
+// false
+```
+- reduce方法和reduceRight方法依次处理数组的每个成员，最终累计为一个值。它们的差别是，reduce是从左到右处理（从第一个成员到最后一个成员），reduceRight则是从右到左（从最后一个成员到第一个成员），其他完全一样。
+```
+[1, 2, 3, 4, 5].reduce(function (a, b) {
+  console.log(a, b);
+  return a + b;
+})
+// 1 2
+// 3 3
+// 6 4
+// 10 5
+//最后结果：15
+
+function substract(prev, cur) {
+  return prev - cur;
+}
+[3, 2, 1].reduce(substract) // 0
+[3, 2, 1].reduceRight(substract) // -4
+```
+- indexOf方法返回给定元素在数组中第一次出现的位置，如果没有出现则返回-1。
+- indexOf方法还可以接受第二个参数，表示搜索的开始位置。
+- lastIndexOf方法返回给定元素在数组中最后一次出现的位置，如果没有出现则返回-1。
+- 链式使用
+```
+var users = [
+  {name: 'tom', email: 'tom@example.com'},
+  {name: 'peter', email: 'peter@example.com'}
+];
+
+users
+.map(function (user) {
+  return user.email;
+})
+.filter(function (email) {
+  return /^t/.test(email);
+})
+.forEach(console.log);
+// "tom@example.com"
+```
 ### javascript函数
 - 三种声明函数的方法（1、function命令：function后面接函数名；2、函数表达式，采用变量赋值的方法；3、Function 构造函数）
 - JavaScript 语言将函数看作一种值，与其它值（数值、字符串、布尔值等等）地位相同。凡是可以使用值的地方，就能使用函数。比如，可以把函数赋值给变量和对象的属性，也可以当作参数传入其他函数，或者作为函数的结果返回。函数只是一个可以执行的值，此外并无特殊之处。由于函数与其他数据类型地位平等，所以在 JavaScript 语言中又称函数为第一等公民。
