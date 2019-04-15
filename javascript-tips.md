@@ -42,7 +42,22 @@
 - 数组或对象最后一个成员的后面，不能加逗号。
 2. JSON字符串与正常字符串直接的转换
 - JSON.stringify方法用于将一个值转为 JSON 字符串
-- JSON.parse方法用于将一个值转为JSON字符串还原。
+- JSON.parse方法用于将一个值转为JSON字符串还原，如以下例子均返回15
+```
+parseInt("0xF", 16);
+parseInt("F", 16);
+parseInt("17", 8);
+parseInt(021, 8);
+parseInt("015", 10);   // parseInt(015, 10); 返回 15
+parseInt(15.99, 10);
+parseInt("15,123", 10);
+parseInt("FXX123", 16);
+parseInt("1111", 2);
+parseInt("15 * 3", 10);
+parseInt("15e2", 10);
+parseInt("15px", 10);
+parseInt("12", 13);
+```
 ### Number对象
 - `(10).toString() // "10"`用于进行数字与字符串的转换，括号内的参数代表进制
 - toString方法只能将十进制的数，转为其他进制的字符串。如果要将其他进制的数，转回十进制，需要使用parseInt方法。
