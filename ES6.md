@@ -52,3 +52,5 @@ var a=1 //变量提升，建议所有的var写在最前方
 let a=1 //let只能声明一次，重复声明会报错，let作用域在最近的{}之间，如果在let a之前使用a，则报错
 const a=1 //const只有一次赋值机会，重复赋值会报错
 ```
+### 一个小函数
+`function sum(a){return function pp(b){return a+b}}  //sum(2)(3)返回5`
