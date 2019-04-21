@@ -54,3 +54,22 @@ const a=1 //const只有一次赋值机会，重复赋值会报错
 ```
 ### 一个小函数
 `function sum(a){return function pp(b){return a+b}}  //sum(2)(3)返回5`
+### async和await
+- async function 用于和Promise联用处理异步情况，使语法和结构会更像是标准的同步函数。
+- await 操作符用于等待一个Promise 对象。它只能在异步函数 async function 中使用，后面加上return promise对象的函数。
+- 一个简单的小例子
+```
+function yaoshaizi(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            let n=parseInt(Math.random()*6+1,10)
+            resolve(n)
+            },3000)    
+    })
+}
+async function test(){
+    let n=await yaoshaizi();
+    console.log(n)
+}
+test()//3秒钟后输出1-6的随机数
+```
