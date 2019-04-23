@@ -1,3 +1,12 @@
+### 关于页面位置的一些内容
+- `document.documentElement.scrollTop` //滚动条距离最顶端的距离（0 ~ 文档高度减去滚动条长度）
+- `document.documentElement.scrollLeft` //滚动条的left  (一般是0)   ！这两个只有Top和Left没有bottom和Right；
+- `document.documentElement.clientWidth` // 可见区域宽度（浏览器窗口的宽）
+- `document.documentElement.clientHeight` // 可见区域高度（浏览器窗口的高）
+- `document.body.clientHeight` //body的 高度（文档的高度）
+- `document.body.clientWidth`//body的宽度（文档的宽度）
+- `document.body.scrollHeight` //body的高度（跟人理解为与文档高度相同）
+- `document.body.scrollWidth` //body的宽度（跟人理解为与文档宽度相同）
 ### 事件队列、事件循环、执行栈
 - js是单线程语言，同步代码依次执行，异步代码放入循环队列
 ### js基本物料
