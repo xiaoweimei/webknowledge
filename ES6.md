@@ -135,3 +135,10 @@ async function test(){
 }
 test()//3秒钟后输出1-6的随机数
 ```
+### 字符串与正则
+- 字符串对象共有 4 个方法，可以使用正则表达式：`match()`、`replace()`、`search()`和`split()`。
+- ES6 将这 4 个方法，在语言内部全部调用RegExp的实例方法，从而做到所有与正则相关的方法，全都定义在RegExp对象上。
+- `String.prototype.match` 调用 `RegExp.prototype[Symbol.match]`
+- `String.prototype.replace` 调用 `RegExp.prototype[Symbol.replace]`
+- `String.prototype.search` 调用 `RegExp.prototype[Symbol.search]`
+- `String.prototype.split` 调用 `RegExp.prototype[Symbol.split]`
