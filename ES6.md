@@ -142,3 +142,15 @@ test()//3秒钟后输出1-6的随机数
 - `String.prototype.replace` 调用 `RegExp.prototype[Symbol.replace]`
 - `String.prototype.search` 调用 `RegExp.prototype[Symbol.search]`
 - `String.prototype.split` 调用 `RegExp.prototype[Symbol.split]`
+### 数组最重要的扩展莫过于三个点`...`
+- 举个例子
+```
+console.log(1,2,...[3,4,5,6],7,8)//1,2,3,4,5,6,7,8
+```
+- 扩展运算符与正常的函数参数可以结合使用，非常灵活
+- 如果扩展运算符后面使用一个空数组，则不产生任何效果
+- 注意，扩展运算符如果放在括号中，JavaScript 引擎就会认为这是函数调用。如果这时不是函数调用，就会报错。
+- 扩展运算符不但可以应用在数组中，同时也可以应用在字符串中
+### `Array.from`方法用于将两类对象转为真正的数组
+- 类似数组的对象（`array-like object`）
+- 可遍历（iterable）的对象（包括 ES6 新增的数据结构 Set 和 Map）。
