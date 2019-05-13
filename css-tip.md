@@ -64,6 +64,8 @@ overflow:hidden 取消父子 margin 合并
 ```
 position: static | relative | absolute | sticky | fixed //基础语法
 ```
+- absolute定位 不设置top、right、bottom、left有什么效果？
+- 元素脱离文档流，但因为没有设置属性导致无法具体定位，紧跟在上个元素之后，但下个元素排列时会忽略此元素
 ### transition用法
 - 基本用法：Transitions可以为一个元素在不同状态之间切换的时候定义不同的过渡效果。比如在不同的伪元素之间切换，像是 :hover，:active 或者通过JavaScript实现的状态变化。
 ```
