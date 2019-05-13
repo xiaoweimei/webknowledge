@@ -7,6 +7,18 @@
 6. `cursor: zoom-out` 缩小符号
 7. `cursor : auto` 浏览器根据内容决定指针样式，如文字用text样式
 8. `cursor : default` 默认指针，通常是箭头
+### background属性
+```
+background-image: 设置背景图像, 可以是真实的图片路径, 也可以是创建的渐变背景;
+background-position: 设置背景图像的位置; background-position: left center ;background-position: right 20px bottom 30px;
+background-size: 设置背景图像的大小; auto cover contain 具体值
+background-repeat: 指定背景图像的铺排方式; repeat-x repeat-y repeat no-repeat round space
+background-attachment: 指定背景图像是滚动还是固定;fixed local scroll
+background-origin: 设置背景图像显示的原点[background-position相对定位的原点];用于设置 background-position 定位时参考的原点, 默认值 padding-box , 另外还有两个值: border-box 和 content-box。
+background-clip: 设置背景图像向外剪裁的区域;用于指定背景图像向外裁剪的区域, 默认值 border-box , 另外还有两个值: padding-box 和 content-box。
+background-color: 指定背景颜色。
+简写的顺序如下: bg-color || bg-image || bg-position [ / bg-size]? || bg-repeat || bg-attachment || bg-origin || bg-clip
+```
 ### 媒体查询代码示例
 ```
 @media (min-width:1000px){
