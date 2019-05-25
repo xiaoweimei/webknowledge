@@ -1,3 +1,11 @@
+### git相关命令
+1. `git clone`从远程主机克隆一个版本库
+2. `git init`初始化仓库
+3. `git add .`将目录文件夹下的文件提交至暂存区
+4. `git commit -am 'messenge'`提交并且加注释 
+5. `git push`用于将本地分支的更新，推送到远程主机。
+6. `git pull`取回远程主机某个分支的更新，再与本地的指定分支合并。
+7. `git status`查看你的文件在工作目录与缓存的状态
 ### git、git bash及github的一些知识
 1. git bash里面选中即为复制，使用中键进行粘贴
 ### 跳转目录用z工具，bashrc文件的配置情况
