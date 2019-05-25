@@ -1,4 +1,5 @@
-- yank复制 paste粘贴 quit退出 write写 read读 undo撤销 redo再次做（按键ctrl+r）、replace替换 change修改 delete删除 insert插入 append添加 line一行 find查找 word单词 forward前进 backward后瑞 up向上 down向下
+### 常见单词及其意思
+yank复制 paste粘贴 quit退出 write写 read读 undo撤销 redo再次做（按键ctrl+r）、replace替换 change修改 delete删除 insert插入 append添加 line一行 find查找 word单词 forward前进 backward后瑞 up向上 down向下
 ### 四种模式 编辑模式和普通模式、冒号模式（命令模式）、V模式（编辑选区模式）
 ### vim编辑器之神其特点是
 1. Linux自带(nano也是Linux自带的)
