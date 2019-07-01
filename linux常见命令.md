@@ -13,3 +13,4 @@
 - pwd 显示当前目录process work direction
 - 创建文件 echo 1>1.txt 将1放到1.txt文件中 touch 文件名
 - touch如果文件不存在则创建文件，如果存在则改变文件更新时间
+- file 命令代表查看文件类型，类似于windows下的文件后缀名
