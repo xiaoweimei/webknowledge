@@ -16,4 +16,6 @@
 ### 生产环境和开发环境
 - `npm install -d` 就是`npm install --save-dev` 安装到开发环境 例如 gulp，babel，webpack 一般都是辅助工具，把模块名和版本号写在devdependencies部分。
 - `npm insatll -s` 就是`npm install --save`  安装到生产环境 如 vue ,react等，并把模块名和版本号添加到dependencies 部分。
-
+### 简单一些就是
+## dpendencies存放项目或组件代码中依赖到的
+## devDependencies存放测试代码依赖的包或构建工具的包
