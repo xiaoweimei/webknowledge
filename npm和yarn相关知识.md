@@ -14,5 +14,6 @@
 - `yarn global add xxx` 等同于 `npm install xxx -g` 全局安装指定包
 - `yarn global remove xxx` 等同于 `npm uninstall xxx -g` 全局安装指定包
 ### 生产环境和开发环境
-- `npm install -d` 就是`npm install --save-dev` 安装到开发环境 例如 gulp，babel，webpack 一般都是辅助工具
-- `npm insatll -s` 就是`npm install --save`  安装到生产环境 如 vue ,react等
+- `npm install -d` 就是`npm install --save-dev` 安装到开发环境 例如 gulp，babel，webpack 一般都是辅助工具，把模块名和版本号写在devdependencies部分。
+- `npm insatll -s` 就是`npm install --save`  安装到生产环境 如 vue ,react等，并把模块名和版本号添加到dependencies 部分。
+
