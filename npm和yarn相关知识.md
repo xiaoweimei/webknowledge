@@ -12,3 +12,4 @@
 - `yarn add xxx —dev` 等同于 `npm install xxx —save-dev`
 - `yarn upgrade` 等同于 `npm update` 升级全部包
 - `yarn global add xxx` 等同于 `npm install xxx -g` 全局安装指定包
+- `yarn global remove xxx` 等同于 `npm uninstall xxx -g` 全局安装指定包
