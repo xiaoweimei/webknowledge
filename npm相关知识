@@ -1,4 +1,0 @@
-### 配置npm
-- `npm config set loglevel http` 让你知道npm发的每一个请求
-- `npm config set progress false` 关闭那个进度条
-- 为了安装速度更快，运行`npm config set register XXX代表淘宝原地址` 想要恢复原样只需要`npm config delete register`就可以了
