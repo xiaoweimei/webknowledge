@@ -73,6 +73,31 @@ $boder-width:2px;
 5. 颜色相关运算，提供了一套操控颜色的函数，30多种关于颜色的函数
 6. 关于字符串插值
 ```
+---------------------------------
+html
+---------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>SCSS 2</title>
+  <link rel="stylesheet" href="./2.scss">
+</head>
+<body>
+<div class="userCard">
+  <div>
+    <div class="userCard-name">scss语法</div>
+    <div class="userCard-oneSentence">前端社区</div>
+  </div>
+  <div class="userCard-description">前端社区</div>
+</div>
+</body>
+</html>
+---------------------------------
+2.scss
+---------------------------------
 $red:#f60;
 .userCard{
 	width:100px;
