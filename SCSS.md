@@ -59,3 +59,50 @@ $boder-width:2px;
 	}
 }
 ```
+- BEM（block element modifier） CSS命名法
+1. 主要名字.user-card
+2. 细节部分 .user-card__picture .user-card__name
+3. 状态部分 .user-card--active
+- 直接加&符号可以省略前置部分代码
+- 嵌套属性，属性也是可以嵌套的，比如font-size,font-family可以嵌套
+- 注释，
+1. css注释/*这是CSS注释*/
+2. sass注释//这是sass注释
+3. 变量也是可以有作用域的CSS变量的作用域覆盖
+4. 支持加减乘除取余
+5. 颜色相关运算，提供了一套操控颜色的函数，30多种关于颜色的函数
+6. 关于字符串插值
+```
+$red:#f60;
+.userCard{
+	width:100px;
+	&.active{
+		width:100px;
+	}
+	&-name{ //直接加&符号可以省略前置部分代码
+		font:{
+			size:18px;
+			weight:bold;
+			family:"楷体";
+		}
+		&:hover{
+			color:$red;
+		}
+	}
+	&-description{
+		$width:100px; //变量作用域
+		width:$width;
+		height:$width;
+		border-radius:$width/4; //使用除法
+		border:1px solid green;
+	}
+	&-oneSentence{
+		&::before{
+			content:'oop#{$red}' //字符串中插入变量
+		}
+		&::after{
+			content:'ppo'
+		}
+	}
+}
+```
