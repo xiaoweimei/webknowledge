@@ -130,4 +130,96 @@ $red:#f60;
 		}
 	}
 }
+---------------------------------
+```
+### 一个小例子
+```
+---------------------------------
+html
+---------------------------------
+<div class="buttonWrapper">
+  <button>第一个按钮</button>
+  <button>第二个按钮</button>
+</div>
+---------------------------------
+2.scss
+---------------------------------
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  background:#fff;
+  display:flex;
+  justify-content:center;
+  min-height:100vh;
+  align-items:center;
+}
+@mixin buttonWithShadow($color){
+  background: $color;
+  box-shadow:0px 5px 0px 0px darken($color,15%);//darken函数加深颜色
+}
+.buttonWrapper{
+  button{
+    padding:10px 20px;
+    font-size:20px;
+    margin:0 40px;
+    border-radius:4px;
+    border:none;
+    color:white;
+    &:first-child{
+      $blue:#55acee;
+      @include buttonWithShadow($blue);
+       &:hover{
+         animation-duration:0.5s;
+         animation-name:x;
+      }
+    }
+    &:nth-child(2){
+      $green:#2ecc71; //变量
+      @include buttonWithShadow($green);
+        &:hover{
+          animation-duration:0.5s;
+          animation-name:y;
+      }
+    }
+  }
+}
+$n:30%;
+@keyframes x{
+  0%{
+    transform:translateX(-$n);
+  }
+  25%{
+    transform:translateX($n);
+  }
+  50%{
+    transform:translateX(-$n);
+  }
+  75%{
+    transform:translateX($n);
+  }
+  100%{
+    transform:translateX(0);
+  }
+}
+@keyframes y{
+  0%{
+    transform:translateY(-$n);
+  }
+  25%{
+    transform:translateY($n);
+  }
+  50%{
+    transform:translateY(-$n);
+  }
+  75%{
+    transform:translateY($n);
+  }
+  100%{
+    transform:translateY(0);
+  }
+}
+--------------------------------
 ```
