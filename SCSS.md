@@ -297,6 +297,5 @@ $step:25%;
     transform:translateY(0);
   }
 }
-```
 //SCSS使用循环和判断语句
 ```
