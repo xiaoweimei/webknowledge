@@ -222,4 +222,81 @@ $n:30%;
   }
 }
 --------------------------------
+将上述SCSS代码再次进行简化，使用循环和判断
+--------------------------------
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+body{
+  background:#fff;
+  display:flex;
+  justify-content:center;
+  min-height:100vh;
+  align-items:center;
+}
+@mixin buttonWithShadow($color){
+  background: $color;
+  box-shadow:0px 5px 0px 0px darken($color,15%);//darken函数加深颜色
+}
+.buttonWrapper{
+  button{
+    padding:10px 20px;
+    font-size:20px;
+    margin:0 40px;
+    border-radius:4px;
+    border:none;
+    color:white;
+    &:first-child{
+      $blue:#55acee;
+      @include buttonWithShadow($blue);
+       &:hover{
+         animation-duration:0.5s;
+         animation-name:x;
+      }
+    }
+    &:nth-child(2){
+      $green:#2ecc71; //变量
+      @include buttonWithShadow($green);
+        &:hover{
+          animation-duration:0.5s;
+          animation-name:y;
+      }
+    }
+  }
+}
+$n1:10%;
+$n2:30%;
+$step:25%;
+@keyframes x{
+  @for $i from 0 to 4{
+    #{$i*$step}{
+      @if $i%2==0{
+        transform:translateX(-$n1);
+      }@else{
+        transform:translateX($n1);
+      } 
+    }
+  }
+  100%{
+    transform:translateX(0);
+  }
+}
+@keyframes y{
+  @for $i from 0 to 4{
+    #{$i*$step}{
+      @if $i%2==0{
+        transform:translateY(-$n2);
+      }@else{
+        transform:translateY($n2);
+      } 
+    }
+  }
+ 100%{
+    transform:translateY(0);
+  }
+}
+```
+//SCSS使用循环和判断语句
 ```
