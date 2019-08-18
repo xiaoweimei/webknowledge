@@ -1,3 +1,6 @@
+### 盒子模型
+- box-sizing:border-box width就等于内容宽度
+- box-sizing:content-box width等于左右border加上左右padding再加上内容的宽度，谷歌浏览器默认的盒子模型就是content-box
 ### cursor鼠标手势
 1. `cursor : move` 出来十字指示符
 2. `cursor: pointer` 出来一个手
