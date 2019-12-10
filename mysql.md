@@ -35,3 +35,4 @@
 1.InnoDB存储引擎
 2.MyISAM存储引擎
 3.MEMORY存储引擎
+[简书部分优秀文章](https://www.jianshu.com/p/118e1c41e9f0)
